@@ -1,0 +1,17 @@
+{
+  "name": "reslist",
+  "version": "1.0.0",
+  "description": "Restaurant Wish List",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "nodemon server/server.js"
+  },
+  "author": "Hank Couture",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.13.3",
+    "node-foursquare-venues": "^1.1.0",
+    "nodemon": "^1.8.1",
+    "yelp": "^1.0.1"
+  }
+}
