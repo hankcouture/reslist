@@ -22,3 +22,54 @@ form {
 	width: 30%;
 	float: left;
 }
+
+
+#tempResults {
+	border: 1px solid green;
+	-webkit-transition:all linear 0.5s;
+	transition:all linear 0.5s;
+}
+#tempResults.ng-hide {
+	opacity:0;
+}
+
+.restaurant img {
+	width: 50px;
+	margin: 5px;
+	float: left;
+	border-radius: 5px;
+}
+
+.yelpRating {
+	text-align: center;
+	background-color: #c41200;
+	font-weight: bold;
+	color: #fff;
+	font-size: 12px;
+	padding: 5px 0px;
+	border-radius: 3px;
+	width: 45px;
+	float: right;
+	margin: 39px 5px 0px 0px;
+}
+
+.yelpRating:hover {
+	background-color: #890c00;
+}
+
+.foursquareRating {
+	text-align: center;
+	background-color: #00B551;
+	font-weight: bold;
+	color: #fff;
+	font-size: 12px;
+	padding: 5px 0px;
+	border-radius: 3px;
+	width: 45px;
+	float: right;
+	margin: 39px 0px 0px;
+}
+
+.foursquareRating:hover {
+	background-color: #007e38;
+}
