@@ -4,3 +4,21 @@ body {
 	background-color: #f9f9f9;
 	text-align: center;
 }
+
+div {
+	border: 1px solid black;
+}
+
+form {
+	padding: 5%;
+}
+
+#mobile-input {
+	width: 70%;
+	float: left;
+}
+
+#mobile-submit {
+	width: 30%;
+	float: left;
+}
