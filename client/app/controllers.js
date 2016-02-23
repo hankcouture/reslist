@@ -7,8 +7,20 @@ home.controller('HomeController', ['$scope', '$http', '$state', function($scope,
 
 	$scope.addRestaurant = function(value) {
 		$scope.searchValue = '';
-		$scope.resList.push({ name: value })
+		$scope.getResults(value);
 	}
 
+	$scope.getResults = function(searchValue) {
+		return $http({
+		  method: 'POST',
+		  url: '/',
+		  data: {
+		  	term: searchValue
+		  }
+		})
+		.then(function (res) {
+			$scope.resList = res.data.results;
+		})
+	}
 
 }])

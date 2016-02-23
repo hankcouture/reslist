@@ -12,7 +12,9 @@
 	</div>
 	<div class="row">
 		<div class="restaurant" ng-repeat="res in resList">
-			<span>{{ res.name }}</span>
+			<p><span>{{ res.y.name }}</span> = <span>{{ res.f.name }}</span></p>
+			<p><span>{{ res.y.address }}</span> = <span>{{ res.f.address }}</span></p>
+			<p><span>{{ res.y.phone }}</span> = <span>{{ res.f.phone }}</span></p>
 		</div>
 	</div>
 </div>
