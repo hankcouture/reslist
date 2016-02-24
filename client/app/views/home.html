@@ -1,8 +1,6 @@
-<nav>
-	ResList
-</nav>
 <div class="container-fluid">
 	<div class="row search-container">
+		<h1>Chicago</h1>
 		<form class="form-inline" ng-submit="addRestaurant( searchValue )">
 		  <div class="form-group" id="mobile-input">
 		    <input type="text" class="form-control" ng-model="searchValue" placeholder="Add Restaurant...">
@@ -10,36 +8,50 @@
 		  <button type="submit" class="btn btn-default" id="mobile-submit">Search</button>
 		</form>
 	</div>
-	<div class="row" id="tempResults" ng-show="tempResults.length > 0">
-		<span>Click on the best match?</span>
+	<div class="row" ng-show="tempResults.length > 0">
+		<p>Click on the best match?</p>
 		<div class="restaurant" ng-repeat="res in tempResults" ng-click="selectRestaurant( res ) ">
+			<div class="restaurant-title">{{ res.f.name }}</div>
 			<img ng-src="{{ res.y.image }}" />
 			<div class="restaurant-info">
-				<h4>{{ res.f.name }}</h4>
-				<p>{{ res.y.address }}</p>
-				<p class="restaurant-phone">{{ res.y.phone }}</p>
-				<a ng-href="{{ res.y.url }}">
-					<div class="yelpRating">{{ res.y.rating }}<i class="fa fa-yelp"></i></div>
-				</a>
-				<a ng-href="{{ res.f.url }}" ng-show="res.f.rating">
-					<div class="foursquareRating">{{ res.f.rating }}<i class="fa fa-foursquare"></i></div>
-				</a>
+				<div class="restaurant-ratings">
+					<a ng-href="{{ res.y.url }}">
+						<div class="yelpRating">{{ res.y.rating }}<i class="fa fa-yelp"></i></div>
+					</a>
+					<a ng-href="{{ res.f.url }}" ng-show="res.f.rating">
+						<div class="foursquareRating">{{ res.f.rating }}<i class="fa fa-foursquare"></i></div>
+					</a>
+				</div>
+				<div class="restaurant-address">
+					<p>{{ res.y.address }}</p>
+					<p>{{ res.f.city }}, {{ res.f.state }}</p>
+				</div>
+				<ul class="categories">
+					<li ng-repeat="category in res.y.categories">{{ category[0] }}</li>
+				</ul>
 			</div>
 		</div>
 	</div>
-	<div class="row">
-		<div class="restaurant" ng-repeat="res in resList" ng-hide="tempResults.length > 0">
+	<div class="row list-results" ng-hide="tempResults.length > 0">
+		<div class="restaurant" ng-repeat="res in resList">
+			<div class="restaurant-title">{{ res.f.name }}</div>
 			<img ng-src="{{ res.y.image }}" />
 			<div class="restaurant-info">
-				<h4>{{ res.f.name }}</h4>
-				<p>{{ res.y.address }}</p>
-				<p class="restaurant-phone">{{ res.y.phone }}</p>
-				<a ng-href="{{ res.y.url }}">
-					<div class="yelpRating">{{ res.y.rating }}<i class="fa fa-yelp"></i></div>
-				</a>
-				<a ng-href="{{ res.f.url }}" ng-show="res.f.rating">
-					<div class="foursquareRating">{{ res.f.rating }}<i class="fa fa-foursquare"></i></div>
-				</a>
+				<div class="restaurant-ratings">
+					<a ng-href="{{ res.y.url }}">
+						<div class="yelpRating">{{ res.y.rating }}<i class="fa fa-yelp"></i></div>
+					</a>
+					<a ng-href="{{ res.f.url }}" ng-show="res.f.rating">
+						<div class="foursquareRating">{{ res.f.rating }}<i class="fa fa-foursquare"></i></div>
+					</a>
+				</div>
+				<div class="restaurant-address">
+					<p>{{ res.y.address }}</p>
+					<p>{{ res.f.city }}, {{ res.f.state }}</p>
+				</div>
+				<ul class="categories">
+					<li ng-repeat="category in res.y.categories">{{ category[0] }}</li>
+				</ul>
 			</div>
 		</div>
 	</div>

@@ -47,6 +47,8 @@ app.post('/', function(req, res) {
 						name: foursquareData[x].venue.name,
 						rating: foursquareData[x].venue.rating,
 						address: foursquareData[x].venue.location.address,
+						city: foursquareData[x].venue.location.city,
+						state: foursquareData[x].venue.location.state,
 						phone: foursquareData[x].venue.contact.phone,
 						reviewCount: foursquareData[x].venue.ratingSignals,
 						url: 'https://foursquare.com/v/' + foursquareData[x].venue.id,
