@@ -57,6 +57,7 @@ app.post('/', function(req, res) {
 				}
 
 				var finalList = []
+				var check = {};
 
 				yList.forEach(function(y) {
 					fList.forEach(function(f) {
@@ -71,18 +72,27 @@ app.post('/', function(req, res) {
 								match = true;
 							}
 						}
-						// if ((helpers.similar_text(y.name, f.name, true)) > 90) {
-							// match = true;
-						// }
-						if (match) {
-							finalList.push({ y: y, f: f })
+						if (check[y.name] && match) {
+							var arrLoc = check[y.name]-1;
+							var arrVal = helpers.similar_text(finalList[arrLoc].y.name, finalList[arrLoc].f.name, true);
+							var newVal = helpers.similar_text(y.name, f.name, true);
+							if (newVal > arrVal) {
+								finalList[arrLoc] = { y: y, f: f };
+								check[y.name] = finalList.length;
+							} else if ((helpers.similar_text(y.name, f.name, true) > 95) && match) {
+								finalList.push({ y: y, f: f });
+							}
+						} else if (match) {
+							finalList.push({ y: y, f: f });
+							check[y.name] = finalList.length;
 						}
 					})
 				})
 
-
 	        	var results = {
-	        		results: finalList
+	        		results: finalList,
+	        		yelp: yList,
+	        		foursquare: fList
 	        	};
 
 

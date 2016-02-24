@@ -5,12 +5,17 @@ body {
 	text-align: center;
 }
 
+nav {
+	background-color: #2d5be3;
+	color: #fff;
+}
+
 div {
-	border: 1px solid black;
+	/*border: 1px solid black;*/
 }
 
 form {
-	padding: 5%;
+	padding: 2% 5% 5%;
 }
 
 #mobile-input {
@@ -19,8 +24,13 @@ form {
 }
 
 #mobile-submit {
-	width: 30%;
+	width: 27%;
+	margin-left: 3%;
 	float: left;
+}
+
+.search-container {
+	background-color: #2d5be3;
 }
 
 
@@ -33,11 +43,45 @@ form {
 	opacity:0;
 }
 
+.restaurant:after {
+	content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.restaurant {
+	border: 1px solid black;
+	border-radius: 5px;
+	margin: 1.5% 1%;
+}
+
 .restaurant img {
-	width: 50px;
-	margin: 5px;
+	width: 18%;
+	margin: 1%;
 	float: left;
 	border-radius: 5px;
+}
+
+.restaurant-info {
+	float: left;
+	width: 80%;
+}
+
+.restaurant h4 {
+	text-align: left;
+	font-weight: 600;
+	margin: 1% 0%;
+}
+
+.restaurant p {
+	text-align: left;
+	margin: 0%;
+	float: left;
+	clear: both;
+}
+
+.restaurant-phone {
 }
 
 .yelpRating {
@@ -50,7 +94,7 @@ form {
 	border-radius: 3px;
 	width: 45px;
 	float: right;
-	margin: 39px 5px 0px 0px;
+	margin: 0px 5px 0px 0px;
 }
 
 .yelpRating:hover {
@@ -67,9 +111,13 @@ form {
 	border-radius: 3px;
 	width: 45px;
 	float: right;
-	margin: 39px 0px 0px;
+	margin: 0px 0px 0px;
 }
 
 .foursquareRating:hover {
 	background-color: #007e38;
+}
+
+.fa-yelp, .fa-foursquare {
+	margin-left: 5px;
 }
